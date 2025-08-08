@@ -34,7 +34,6 @@ public class HarmonyPatches : ModSystem
 
     private void ApplyClientPatches()
     {
-        PatchCategoryIfTrue(nameof(Core.ConfigClient.AlwaysSwitchToBestTool), value: Core.ConfigClient.AlwaysSwitchToBestTool);
         PatchCategoryIfTrue(nameof(Core.ConfigClient.ModesPerRowForVoxelRecipesEnabled), value: Core.ConfigClient.ModesPerRowForVoxelRecipesEnabled);
         PatchCategoryIfTrue(nameof(Core.ConfigClient.ColorsPerRowForWaypointWindowEnabled), value: Core.ConfigClient.ColorsPerRowForWaypointWindowEnabled);
         PatchCategoryIfTrue(nameof(Core.ConfigClient.IconsPerRowForWaypointWindowEnabled), value: Core.ConfigClient.IconsPerRowForWaypointWindowEnabled);

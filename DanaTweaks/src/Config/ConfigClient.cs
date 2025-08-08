@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using Vintagestory.API.Common;
 
@@ -6,11 +5,6 @@ namespace DanaTweaks.Configuration;
 
 public class ConfigClient : IModConfig
 {
-    public bool AlwaysSwitchToBestTool { get; set; }
-
-    [JsonConverter(typeof(StringArrayEnumConverter<EnumTool>))]
-    public EnumTool[] AlwaysSwitchToBestToolIgnoredTools { get; set; }
-
     public bool OverrideWaypointColors { get; set; } = false;
     public List<string> ExtraWaypointColors { get; set; } = new();
 
@@ -30,12 +24,8 @@ public class ConfigClient : IModConfig
     {
         if (previousConfig == null)
         {
-            AlwaysSwitchToBestToolIgnoredTools ??= DefaultIgnoredTools();
             return;
         }
-
-        AlwaysSwitchToBestToolIgnoredTools = previousConfig?.AlwaysSwitchToBestToolIgnoredTools ?? DefaultIgnoredTools();
-        AlwaysSwitchToBestTool = previousConfig.AlwaysSwitchToBestTool;
 
         OverrideWaypointColors = previousConfig.OverrideWaypointColors;
         ExtraWaypointColors.AddRange(previousConfig.ExtraWaypointColors);
@@ -52,20 +42,4 @@ public class ConfigClient : IModConfig
         GlowingProjectiles = previousConfig.GlowingProjectiles;
         ResinOnAllSides = previousConfig.ResinOnAllSides;
     }
-
-    private static EnumTool[] DefaultIgnoredTools() => new[]
-    {
-        EnumTool.Bow,
-        EnumTool.Chisel,
-        EnumTool.Hammer,
-        EnumTool.Hoe,
-        EnumTool.Meter,
-        EnumTool.Probe,
-        EnumTool.Saw,
-        EnumTool.Sickle,
-        EnumTool.Sling,
-        EnumTool.Spear,
-        EnumTool.Sword,
-        EnumTool.Wrench
-    };
 }

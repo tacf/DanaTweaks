@@ -88,9 +88,6 @@
     "Config.Setting.GlowingProjectiles": "Proyectiles Brillantes",
     "Config.Setting.ResinOnAllSides": "Mostrar la Resina en todas las caras del Tronco con Resina",
 
-    "Config.Setting.AlwaysSwitchToBestTool": "Cambiar siempre a la mejor Herramienta",
-    "Config.Setting.AlwaysSwitchToBestToolIgnoredTools": "Herramientas Ignoradas",
-
     "Config.Setting.AutoClose": "Cierre Automático",
     "Config.Setting.AutoClose.Description": "Cierre Automático de Puertas, Trampillas, etc.",
 

@@ -86,9 +86,6 @@
     "Config.Setting.GlowingProjectiles": "Wlacz 'Swiecace pociski'",
     "Config.Setting.ResinOnAllSides": "Show resin on all sides of log with resin",
 
-    "Config.Setting.AlwaysSwitchToBestTool": "Zawsze przelaczaj na najlepsze narzedzie",
-    "Config.Setting.AlwaysSwitchToBestToolIgnoredTools": "Narzedzia ignorowane",
-
     "Config.Setting.AutoClose": "Auto zamykanie",
     "Config.Setting.AutoClose.Description": "Auto zamykanie drzwi, zapadni, bram, itp.",
 

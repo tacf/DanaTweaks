@@ -207,23 +207,6 @@ public class ConfigLibCompatibility
                 config.IconsPerRowForWaypointWindowRatio = OnInputFloat(id, config.IconsPerRowForWaypointWindowRatio, nameof(config.IconsPerRowForWaypointWindowRatio), 0.1f);
                 ImGui.Unindent();
             }
-            if (ImGui.CollapsingHeader(Lang.Get(settingPrefix + nameof(config.AlwaysSwitchToBestTool)) + $"##settingAlwaysSwitchToBestTool-{id}"))
-            {
-                ImGui.Indent();
-                config.AlwaysSwitchToBestTool = OnCheckBoxWithoutTranslation($"##boolean-AlwaysSwitchToBestTool-{id}", config.AlwaysSwitchToBestTool, Lang.Get(textEnabled));
-                ImGui.BeginListBox(Lang.Get(settingPrefix + nameof(config.AlwaysSwitchToBestToolIgnoredTools)) + $"##settingAlwaysSwitchToBestToolIgnoredTools-{id}");
-                IOrderedEnumerable<KeyValuePair<EnumTool, bool>> ignoredTools = Enum.GetValues<EnumTool>().ToDictionary(x => x, x => config.AlwaysSwitchToBestToolIgnoredTools.Contains(x)).OrderBy(x => Enum.GetName(x.Key));
-                Dictionary<EnumTool, bool> ignoredToolsNew = ignoredTools.ToDictionary(x => x.Key, x => x.Value);
-
-                foreach ((EnumTool key, bool val) in ignoredTools)
-                {
-                    ignoredToolsNew[key] = OnCheckBoxWithoutTranslation(id, val, Enum.GetName(key));
-                }
-
-                config.AlwaysSwitchToBestToolIgnoredTools = ignoredToolsNew.Where(x => x.Value).Select(x => x.Key).ToArray();
-                ImGui.EndListBox();
-                ImGui.Unindent();
-            }
             ImGui.Unindent();
         }
     }
