@@ -111,7 +111,6 @@ public class Core : ModSystem
             block.PatchOmniRotatable();
             block.PatchOpenConnectedTrapdoors();
             block.PatchOvenFuel();
-            block.PatchPie();
             block.PatchPitKiln(api);
             block.PatchRainCollector();
             block.PatchResinLog();

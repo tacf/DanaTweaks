@@ -107,20 +107,6 @@ public static class BlockPatches
         }
     }
 
-    public static void PatchPie(this Block block)
-    {
-        if (Core.ConfigServer.ShelvablePie && block is BlockPie)
-        {
-            block.EnsureAttributesNotNull();
-            block.Attributes.Token["shelvable"] = JToken.FromObject(true);
-            block.Attributes.Token["onDisplayTransform"] = JToken.FromObject(new ModelTransform()
-            {
-                Origin = new() { X = 0.5f, Y = 0f, Z = 0.5f },
-                Scale = 0.65f
-            });
-        }
-    }
-
     public static void PatchLeaves(this Block block)
     {
         if (Core.ConfigServer.BranchCutter && block.BlockMaterial == EnumBlockMaterial.Leaves)
