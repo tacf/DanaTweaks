@@ -76,7 +76,6 @@ public class ConfigLibCompatibility
             config.FixOvenFuelRendering = OnCheckBox(id, config.FixOvenFuelRendering, nameof(config.FixOvenFuelRendering));
             config.FourPlanksFromLog = OnCheckBox(id, config.FourPlanksFromLog, nameof(config.FourPlanksFromLog));
             config.GroundStorageImmersiveCrafting = OnCheckBox(id, config.GroundStorageImmersiveCrafting, nameof(config.GroundStorageImmersiveCrafting));
-            config.GroundStorageLiquidInteraction = OnCheckBox(id, config.GroundStorageLiquidInteraction, nameof(config.GroundStorageLiquidInteraction));
             config.GroundStorageParticles = OnCheckBox(id, config.GroundStorageParticles, nameof(config.GroundStorageParticles));
             config.HalloweenEveryDay = OnCheckBox(id, config.HalloweenEveryDay, nameof(config.HalloweenEveryDay));
             config.PlanksInPitKiln = OnCheckBox(id, config.PlanksInPitKiln, nameof(config.PlanksInPitKiln));
