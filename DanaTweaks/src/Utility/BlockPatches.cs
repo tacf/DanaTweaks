@@ -89,14 +89,6 @@ public static class BlockPatches
         }
     }
 
-    public static void PatchCrock(this Block block)
-    {
-        if (Core.ConfigServer.SealCrockExtraInteractions && block is BlockCrock)
-        {
-            block.CollectibleBehaviors = block.CollectibleBehaviors.Append(new CollectibleBehaviorSealCrockWithToolMode(block));
-        }
-    }
-
     public static void PatchCrate(this Block block)
     {
         if (block is BlockCrate)

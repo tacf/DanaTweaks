@@ -53,7 +53,6 @@ public class ConfigServer : IModConfig
     public bool RegrowResin { get; set; } = true;
     public bool RemoveBookSignature { get; set; } = true;
     public bool ScrapRecipes { get; set; } = true;
-    public bool SealCrockExtraInteractions { get; set; } = true;
     public bool ShelvablePie { get; set; } = true;
     public bool SlabToolModes { get; set; } = true;
     public bool WaxCheeseOnGround { get; set; } = true;
@@ -123,7 +122,6 @@ public class ConfigServer : IModConfig
         RegrowResin = previousConfig.RegrowResin;
         RemoveBookSignature = previousConfig.RemoveBookSignature;
         ScrapRecipes = previousConfig.ScrapRecipes;
-        SealCrockExtraInteractions = previousConfig.SealCrockExtraInteractions;
         ShelvablePie = previousConfig.ShelvablePie;
         SlabToolModes = previousConfig.SlabToolModes;
         WaxCheeseOnGround = previousConfig.WaxCheeseOnGround;

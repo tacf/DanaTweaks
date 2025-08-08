@@ -24,7 +24,6 @@ public class HarmonyPatches : ModSystem
     private void ApplyServerPatches()
     {
         PatchCategoryIfTrue(nameof(Core.ConfigServer.SlabToolModes), value: Core.ConfigServer.SlabToolModes);
-        PatchCategoryIfTrue(nameof(Core.ConfigServer.SealCrockExtraInteractions), value: Core.ConfigServer.SealCrockExtraInteractions);
         PatchCategoryIfTrue(nameof(Core.ConfigServer.FirepitHeatsOven), value: Core.ConfigServer.FirepitHeatsOven);
         PatchCategoryIfTrue(nameof(Core.ConfigServer.CreativeMiddleClickEntity), value: Core.ConfigServer.CreativeMiddleClickEntity);
         PatchCategoryIfTrue(nameof(Core.ConfigServer.FixOvenFuelRendering), value: Core.ConfigServer.FixOvenFuelRendering);

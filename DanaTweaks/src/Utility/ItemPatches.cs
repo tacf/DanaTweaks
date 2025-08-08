@@ -32,15 +32,6 @@ public static class ItemPatches
         }
     }
 
-    public static void PatchCrockSealant(this Item item)
-    {
-        if (Core.ConfigServer.SealCrockExtraInteractions && item.WildCardMatchExt("@(beeswax|fat)"))
-        {
-            item.EnsureAttributesNotNull();
-            item.Attributes.Token["canSealCrock"] = JToken.FromObject(true);
-        }
-    }
-    
     public static void PatchFirestarter(this Item item)
     {
         if (Core.ConfigServer.RackableFirestarter && item is ItemFirestarter)

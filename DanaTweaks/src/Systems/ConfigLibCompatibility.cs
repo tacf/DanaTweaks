@@ -66,7 +66,6 @@ public class ConfigLibCompatibility
             config.EverySoilUnstable = OnCheckBox(id, config.EverySoilUnstable, nameof(config.EverySoilUnstable));
             config.ExtraClayforming = OnCheckBox(id, config.ExtraClayforming, nameof(config.ExtraClayforming));
             config.ScrapRecipes = OnCheckBox(id, config.ScrapRecipes, nameof(config.ScrapRecipes));
-            config.SealCrockExtraInteractions = OnCheckBox(id, config.SealCrockExtraInteractions, nameof(config.SealCrockExtraInteractions));
             config.SlabToolModes = OnCheckBox(id, config.SlabToolModes, nameof(config.SlabToolModes));
 
             config.BranchCutter = OnCheckBox(id, config.BranchCutter, nameof(config.BranchCutter));

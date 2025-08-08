@@ -56,7 +56,6 @@ public class Core : ModSystem
 
         api.RegisterCollectibleBehaviorClass("DanaTweaks:BranchCutter", typeof(CollectibleBehaviorBranchCutter));
         api.RegisterCollectibleBehaviorClass("DanaTweaks:RemoveBookSignature", typeof(CollectibleBehaviorRemoveBookSignature));
-        api.RegisterCollectibleBehaviorClass("DanaTweaks:SealCrockWithToolMode", typeof(CollectibleBehaviorSealCrockWithToolMode));
         api.RegisterCollectibleBehaviorClass("DanaTweaks:WaxCheeseOnGround", typeof(CollectibleBehaviorWaxCheeseOnGround));
 
         api.RegisterEntityBehaviorClass("danatweaks:autoPlantDroppedTreeSeeds", typeof(EntityBehaviorAutoPlantDroppedTreeSeeds));
@@ -107,7 +106,6 @@ public class Core : ModSystem
             if (block?.Code == null) continue;
             block.PatchAutoClose();
             block.PatchCrate();
-            block.PatchCrock();
             block.PatchDecor();
             block.PatchEverySoilUnstable();
             block.PatchGroundStorageParticles();
@@ -129,7 +127,6 @@ public class Core : ModSystem
             if (item?.Code == null) continue;
             item.PatchBook();
             item.PatchBranchCutter();
-            item.PatchCrockSealant();
             item.PatchFirestarter();
             item.PatchOvenFuel();
             item.PatchScythe(scytheMorePrefixes);
