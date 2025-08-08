@@ -40,7 +40,9 @@ public static class GroundStorage_ImmersiveCrafting
             || HasSameIngredients(firstSlot, secondSlot, matchingRecipe)
             || HasSealedOrEmptyCrock(firstSlot, secondSlot)
             || HasFullBackpack(firstSlot, secondSlot)
-            || Extensions.AnyCrate(firstSlot, secondSlot) )
+            || Extensions.AnyCrate(firstSlot, secondSlot)
+            || firstSlot.Itemstack.Collectible is BlockCrock
+            || secondSlot.Itemstack.Collectible is BlockCrock)
         {
             return true;
         }
