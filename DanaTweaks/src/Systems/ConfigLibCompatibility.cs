@@ -62,7 +62,6 @@ public class ConfigLibCompatibility
         {
             ImGui.Indent();
             config.CreativeMiddleClickEntity = OnCheckBox(id, config.CreativeMiddleClickEntity, nameof(config.CreativeMiddleClickEntity));
-            config.CreativeTapestries = OnCheckBox(id, config.CreativeTapestries, nameof(config.CreativeTapestries));
             config.EverySoilUnstable = OnCheckBox(id, config.EverySoilUnstable, nameof(config.EverySoilUnstable));
             config.ExtraClayforming = OnCheckBox(id, config.ExtraClayforming, nameof(config.ExtraClayforming));
             config.ScrapRecipes = OnCheckBox(id, config.ScrapRecipes, nameof(config.ScrapRecipes));

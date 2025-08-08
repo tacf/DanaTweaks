@@ -20,7 +20,6 @@ public class Core : ModSystem
         {
             case EnumAppSide.Server:
                 ConfigServer = ModConfig.ReadConfig<ConfigServer>(api, ConfigServerName);
-                api.World.Config.SetBool("DanaTweaks.CreativeTapestries", ConfigServer.CreativeTapestries);
                 api.World.Config.SetBool("DanaTweaks.ExtraClayforming", ConfigServer.ExtraClayforming);
                 api.World.Config.SetBool("DanaTweaks.RecycleBags", ConfigServer.RecycleBags);
                 api.World.Config.SetBool("DanaTweaks.RecycleClothes", ConfigServer.RecycleClothes);

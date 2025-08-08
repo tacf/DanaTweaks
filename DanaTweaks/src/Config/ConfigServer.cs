@@ -34,7 +34,6 @@ public class ConfigServer : IModConfig
 
     public bool BranchCutter { get; set; } = true;
     public bool CreativeMiddleClickEntity { get; set; } = true;
-    public bool CreativeTapestries { get; set; } = true;
     public bool DropResinAnyway { get; set; } = true;
     public bool DropVinesAnyway { get; set; } = true;
     public bool ExtraClayforming { get; set; } = true;
@@ -101,7 +100,6 @@ public class ConfigServer : IModConfig
 
         BranchCutter = previousConfig.BranchCutter;
         CreativeMiddleClickEntity = previousConfig.CreativeMiddleClickEntity;
-        CreativeTapestries = previousConfig.CreativeTapestries;
         DropResinAnyway = previousConfig.DropResinAnyway;
         DropVinesAnyway = previousConfig.DropVinesAnyway;
         ExtraClayforming = previousConfig.ExtraClayforming;

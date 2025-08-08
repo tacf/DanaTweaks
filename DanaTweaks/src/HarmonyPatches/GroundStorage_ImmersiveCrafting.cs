@@ -38,7 +38,6 @@ public static class GroundStorage_ImmersiveCrafting
         if (!GetMatchingRecipe(firstSlot, secondSlot, out GridRecipe matchingRecipe)
             || !AnySatisfies(firstSlot, secondSlot, matchingRecipe)
             || HasSameIngredients(firstSlot, secondSlot, matchingRecipe)
-            || HasSealedOrEmptyCrock(firstSlot, secondSlot)
             || HasFullBackpack(firstSlot, secondSlot)
             || Extensions.AnyCrate(firstSlot, secondSlot)
             || firstSlot.Itemstack.Collectible is BlockCrock
@@ -115,13 +114,6 @@ public static class GroundStorage_ImmersiveCrafting
             || recipe.ConsumeInput(byPlayer, slotsReversed, 1)
             || recipe.ConsumeInput(byPlayer, slotsReversed, 2);
     }
-
-    private static bool HasSealedOrEmptyCrock(ItemSlot firstSlot, ItemSlot secondSlot) => firstSlot.Itemstack.Collectible switch
-    {
-        BlockCrock crock when secondSlot.Itemstack.Collectible is not BlockCrock => crock.IsEmpty(firstSlot.Itemstack) || firstSlot.Itemstack.Attributes.TryGetBool("sealed") == true,
-        not BlockCrock when secondSlot.Itemstack.Collectible is BlockCrock crock => crock.IsEmpty(secondSlot.Itemstack) || secondSlot.Itemstack.Attributes.TryGetBool("sealed") == true,
-        _ => false,
-    };
 
     private static bool HasFullBackpack(ItemSlot firstSlot, ItemSlot secondSlot)
     {

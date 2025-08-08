@@ -7,7 +7,6 @@
     "Command.Error.HasDiffLabel": "Skrzynia ma inny pergamin",
     "Command.Error.NoLabel": "Brak pergaminu w reku lub na skrzyni",
     "RemoveBookSignature": "Usuń podpis ksiazki (musisz być autorem tej ksiazki)",
-    "crock-seal": "Upuść tluszcz lub wosk pszczeli aby uszczelnić.",
     "waxcheese": "Zawoskuj ser",
 
     "game:placefailure-danatweaks-omnirotatable": "Nie mozna polozyc. Sprobuj innego trybu, np. 'Auto'",
@@ -30,11 +29,9 @@
     "Config.Setting.CreativeMiddleClickEntity": "Wlacz 'Creative Middle Click Entity'",
     "Config.Setting.EverySoilUnstable": "Wlacz 'Kazda gleba niestabilna'",
     "Config.Setting.ScrapRecipes": "Wlacz 'Scrap Recipes'",
-    "Config.Setting.SealCrockExtraInteractions": "Wlacz 'Dodatkowe interakcje z uszczelnionym garnkiem'",
     "Config.Setting.SlabToolModes": "Wlacz 'Slab Tool Modes'",
 
     "Config.Setting.BranchCutter": "Dodaj drugi tryb do nozyc aby zbierac cale bloki lisci",
-    "Config.Setting.CreativeTapestries": "Dodaj gobeliny do ekwipunku w trybie kreatywnym",
     "Config.Setting.DropDecor": "Upusc dekoracje",
     "Config.Setting.DropResinAnyway": "Upusc zywice przy scinaniu drzewa",
     "Config.Setting.DropVinesAnyway": "Upusc winorosl przy scinaniu drzewa",

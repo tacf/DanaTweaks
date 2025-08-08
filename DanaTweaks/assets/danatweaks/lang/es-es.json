@@ -7,7 +7,6 @@
     "Command.Error.HasDiffLabel": "La Caja tiene una Etiqueta especial que no se puede retirar.",
     "Command.Error.NoLabel": "No hay ningún Pergamino en tu mano ni en la Caja.",
     "RemoveBookSignature": "Eliminar la Firma del Libro (si eres el Autor).",
-    "crock-seal": "Arroja aquí Grasa o Cera de Abejas para Sellarlo",
     "waxcheese": "Engrasar el Queso",
 
     "game:placefailure-danatweaks-omnirotatable": "No se puede colocar. Prueba otra Función, por ejemplo «Auto».",
@@ -32,11 +31,9 @@
 
     "Config.Setting.CreativeMiddleClickEntity": "Interacciones con Entidades en Creativo con Botón Central",
     "Config.Setting.ScrapRecipes": "Recetas de Reciclado",
-    "Config.Setting.SealCrockExtraInteractions": "Interacciones Adicionales de Sellado de Tarros",
     "Config.Setting.SlabToolModes": "Función de Colocación de Losas",
 
     "Config.Setting.BranchCutter": "Función de obtención de Hojas (completas) con Tijeras.",
-    "Config.Setting.CreativeTapestries": "Añadir Tapices al Inventario Creativo.",
     "Config.Setting.DropDecor": "Arrojar Decoraciones",
     "Config.Setting.DropResinAnyway": "Soltar la Resina al Romper Árboles",
     "Config.Setting.DropVinesAnyway": "Soltar las Enredaderas al Romper los Árboles",
