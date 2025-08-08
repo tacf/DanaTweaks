@@ -169,14 +169,6 @@ public static class BlockPatches
         }
     }
 
-    public static void PatchGroundStorageParticles(this Block block)
-    {
-        if (Core.ConfigServer.GroundStorageParticles && block is BlockGroundStorage)
-        {
-            block.BlockBehaviors = block.BlockBehaviors.Append(new BlockBehaviorGroundStorageParticles(block));
-        }
-    }
-
     public static void PatchOvenFuel(this Block block)
     {
         OvenFuel ovenFuel = Core.ConfigServer.OvenFuelBlocks.FirstOrDefault(keyVal => block.WildCardMatchExt(keyVal.Key) && keyVal.Value.Enabled).Value;
