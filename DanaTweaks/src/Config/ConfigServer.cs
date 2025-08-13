@@ -38,7 +38,6 @@ public class ConfigServer : IModConfig
     public bool DropVinesAnyway { get; set; } = true;
     public bool ExtraClayforming { get; set; } = true;
     public bool FirepitHeatsOven { get; set; } = true;
-    public bool FixOvenFuelRendering { get; set; } = true;
     public bool FourPlanksFromLog { get; set; }
     public bool GroundStorageImmersiveCrafting { get; set; } = true;
     public bool HalloweenEveryDay { get; set; } = true;
@@ -104,7 +103,6 @@ public class ConfigServer : IModConfig
         DropVinesAnyway = previousConfig.DropVinesAnyway;
         ExtraClayforming = previousConfig.ExtraClayforming;
         FirepitHeatsOven = previousConfig.FirepitHeatsOven;
-        FixOvenFuelRendering = previousConfig.FixOvenFuelRendering;
         FourPlanksFromLog = previousConfig.FourPlanksFromLog;
         GroundStorageImmersiveCrafting = previousConfig.GroundStorageImmersiveCrafting;
         HalloweenEveryDay = previousConfig.HalloweenEveryDay;

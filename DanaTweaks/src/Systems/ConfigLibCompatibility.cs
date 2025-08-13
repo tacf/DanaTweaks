@@ -71,7 +71,6 @@ public class ConfigLibCompatibility
             config.DropResinAnyway = OnCheckBox(id, config.DropResinAnyway, nameof(config.DropResinAnyway));
             config.DropVinesAnyway = OnCheckBox(id, config.DropVinesAnyway, nameof(config.DropVinesAnyway));
             config.FirepitHeatsOven = OnCheckBox(id, config.FirepitHeatsOven, nameof(config.FirepitHeatsOven));
-            config.FixOvenFuelRendering = OnCheckBox(id, config.FixOvenFuelRendering, nameof(config.FixOvenFuelRendering));
             config.FourPlanksFromLog = OnCheckBox(id, config.FourPlanksFromLog, nameof(config.FourPlanksFromLog));
             config.GroundStorageImmersiveCrafting = OnCheckBox(id, config.GroundStorageImmersiveCrafting, nameof(config.GroundStorageImmersiveCrafting));
             config.HalloweenEveryDay = OnCheckBox(id, config.HalloweenEveryDay, nameof(config.HalloweenEveryDay));
