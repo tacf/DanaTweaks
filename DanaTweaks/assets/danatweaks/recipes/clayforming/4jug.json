@@ -1,13 +1,10 @@
 {
-	"ingredient": {
-		"type": "item",
-		"code": "game:clay-*",
-		"name": "type",
-		"allowedVariants": [
-			"blue",
-			"fire"
-		]
-	},
+  "ingredient": {
+      "type": "item",
+      "code": "game:clay-*",
+      "name": "color",
+      "allowedVariants": ["blue", "fire", "red"]
+  },
 	"pattern": [
 		[
 			"######_######",
@@ -163,7 +160,7 @@
 	"name": "Jug",
 	"output": {
 		"type": "block",
-		"code": "game:jug-blue-raw",
+		"code": "game:jug-{color}-raw",
 		"stacksize": 4
 	}
 }

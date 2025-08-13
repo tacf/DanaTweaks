@@ -1,13 +1,10 @@
 {
-	"ingredient": {
-		"type": "item",
-		"code": "game:clay-*",
-		"name": "type",
-		"allowedVariants": [
-			"blue",
-			"fire"
-		]
-	},
+  "ingredient": {
+      "type": "item",
+      "code": "game:clay-*",
+      "name": "color",
+      "allowedVariants": ["blue", "fire", "red"]
+  },
 	"pattern": [
 		[
 			"#####_____#####",
@@ -47,7 +44,7 @@
 	"name": "Bowl",
 	"output": {
 		"type": "block",
-		"code": "game:bowl-raw",
+		"code": "game:bowl-{color}-raw",
 		"stacksize": 5
 	}
 }

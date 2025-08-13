@@ -1,13 +1,10 @@
 {
-	"ingredient": {
-		"type": "item",
-		"code": "game:clay-*",
-		"name": "type",
-		"allowedVariants": [
-			"blue",
-			"fire"
-		]
-	},
+  "ingredient": {
+      "type": "item",
+      "code": "game:clay-*",
+      "name": "color",
+      "allowedVariants": ["blue", "fire", "red"]
+  },
 	"pattern": [
 		[
 			"#########______",
@@ -55,7 +52,7 @@
 	"name": "Ingot Mold",
 	"output": {
 		"type": "block",
-		"code": "game:ingotmold-raw",
+		"code": "game:ingotmold-{color}-raw",
 		"stacksize": 3
 	}
 }

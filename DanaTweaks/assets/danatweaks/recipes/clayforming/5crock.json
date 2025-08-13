@@ -1,13 +1,10 @@
 {
-	"ingredient": {
-		"type": "item",
-		"code": "game:clay-*",
-		"name": "type",
-		"allowedVariants": [
-			"blue",
-			"fire"
-		]
-	},
+  "ingredient": {
+      "type": "item",
+      "code": "game:clay-*",
+      "name": "color",
+      "allowedVariants": ["blue", "fire", "red"]
+  },
 	"pattern": [
 		[
 			"_______________",
@@ -132,7 +129,7 @@
 	"name": "5x Crock",
 	"output": {
 		"type": "block",
-		"code": "game:crock-raw-east",
+		"code": "game:crock-{color}-raw",
 		"stacksize": 5
 	}
 }
