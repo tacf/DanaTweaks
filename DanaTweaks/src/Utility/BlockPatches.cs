@@ -18,33 +18,33 @@ public static class BlockPatches
             return;
         }
 
-        string code = block.Code.ToString();
+        //string code = block.Code.ToString();
 
-        string wood = block.Variant["wood"];
-        string metal = block.Variant["metal"];
-        string material = block.Variant["material"];
+        //string wood = block.Variant["wood"];
+        //string metal = block.Variant["metal"];
+        //string material = block.Variant["material"];
 
-        if (!string.IsNullOrEmpty(wood)) code = code.Replace(wood, "*");
-        if (!string.IsNullOrEmpty(metal)) code = code.Replace(metal, "*");
-        if (!string.IsNullOrEmpty(material)) code = code.Replace(material, "*");
+        //if (!string.IsNullOrEmpty(wood)) code = code.Replace(wood, "*");
+        //if (!string.IsNullOrEmpty(metal)) code = code.Replace(metal, "*");
+        //if (!string.IsNullOrEmpty(material)) code = code.Replace(material, "*");
 
-        if (code.Contains("irondoor"))
-        {
-            code = "game:irondoor-*";
-        }
+        //if (code.Contains("irondoor"))
+        //{
+        //    code = "game:irondoor-*";
+        //}
 
-        code = code.RemoveAfterSymbol('*');
+        //code = code.RemoveAfterSymbol('*');
 
-        if (code == "game:door-*")
-        {
-            return;
-        }
+        //if (code == "game:door-*")
+        //{
+        //    return;
+        //}
 
-        if (!Core.ConfigServer.AutoCloseDelays.ContainsKey(code))
+        if (!Core.ConfigServer.AutoCloseDelays.Any(x => WildcardUtil.Match(AssetLocation.Create(x.Key), block.Code)))
         {
             any = true;
             bool enabled = !block.Code.ToString().Contains("heavy") && !block.Code.ToString().Contains("ruined");
-            Core.ConfigServer.AutoCloseDelays.Add(code, enabled ? Core.ConfigServer.AutoCloseDefaultDelay : -1);
+            Core.ConfigServer.AutoCloseDelays.Add(block.Code, enabled ? Core.ConfigServer.AutoCloseDefaultDelay : -1);
         }
     }
 
@@ -55,7 +55,7 @@ public static class BlockPatches
             return;
         }
 
-        if (Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(block.Code, AssetLocation.Create(x.Key))))
+        if (Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(AssetLocation.Create(x.Key), block.Code)))
         {
             return;
         }
@@ -100,7 +100,7 @@ public static class BlockPatches
 
     public static void PatchDecor(this Block block)
     {
-        if (Core.ConfigServer.DropDecor && block.HasBehavior<BlockBehaviorDecor>() && Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(block.Code, AssetLocation.Create(x.Key)) && x.Value))
+        if (Core.ConfigServer.DropDecor && block.HasBehavior<BlockBehaviorDecor>() && Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(AssetLocation.Create(x.Key), block.Code) && x.Value))
         {
             block.CollectibleBehaviors = block.CollectibleBehaviors.Append(new BlockBehaviorGuaranteedDecorDrop(block));
             block.BlockBehaviors = block.BlockBehaviors.Append(new BlockBehaviorGuaranteedDecorDrop(block));
@@ -157,7 +157,7 @@ public static class BlockPatches
 
     public static void PatchOvenFuel(this Block block)
     {
-        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelBlocks.FirstOrDefault(keyVal => WildcardUtil.Match(block.Code, AssetLocation.Create(keyVal.Key)) && keyVal.Value.Enabled).Value;
+        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelBlocks.FirstOrDefault(keyVal => WildcardUtil.Match(AssetLocation.Create(keyVal.Key), block.Code) && keyVal.Value.Enabled).Value;
         if (ovenFuel == null)
         {
             return;
@@ -175,7 +175,7 @@ public static class BlockPatches
     {
         if (Core.ConfigServer.EverySoilUnstable == false) return;
 
-        if (Core.ConfigServer.EverySoilUnstableBlacklist.Any(code => WildcardUtil.Match(block.Code, AssetLocation.Create(code))))
+        if (Core.ConfigServer.EverySoilUnstableBlacklist.Any(code => WildcardUtil.Match(AssetLocation.Create(code), block.Code)))
         {
             return;
         }

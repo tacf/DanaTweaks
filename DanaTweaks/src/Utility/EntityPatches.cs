@@ -36,7 +36,7 @@ public static class EntityPatches
                 entity.AddBehavior(new EntityBehaviorAutoPlantDroppedTreeSeeds(entity));
             }
         }
-        CreatureOpenDoors creatureOpenDoors = Core.ConfigServer.CreaturesOpenDoors.FirstOrDefault(keyVal => WildcardUtil.Match(entity.Code, AssetLocation.Create(keyVal.Key)) && keyVal.Value.Enabled).Value;
+        CreatureOpenDoors creatureOpenDoors = Core.ConfigServer.CreaturesOpenDoors.FirstOrDefault(keyVal => WildcardUtil.Match(AssetLocation.Create(keyVal.Key), entity.Code) && keyVal.Value.Enabled).Value;
         if (creatureOpenDoors != null)
         {
             JsonObject jsonAttributes = creatureOpenDoors.GetAsAttributes();
