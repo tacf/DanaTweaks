@@ -3,6 +3,7 @@ using System.Linq;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
+using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace DanaTweaks;
@@ -35,7 +36,7 @@ public static class EntityPatches
                 entity.AddBehavior(new EntityBehaviorAutoPlantDroppedTreeSeeds(entity));
             }
         }
-        CreatureOpenDoors creatureOpenDoors = Core.ConfigServer.CreaturesOpenDoors.FirstOrDefault(keyVal => entity.WildCardMatchExt(keyVal.Key) && keyVal.Value.Enabled).Value;
+        CreatureOpenDoors creatureOpenDoors = Core.ConfigServer.CreaturesOpenDoors.FirstOrDefault(keyVal => WildcardUtil.Match(entity.Code, AssetLocation.Create(keyVal.Key)) && keyVal.Value.Enabled).Value;
         if (creatureOpenDoors != null)
         {
             JsonObject jsonAttributes = creatureOpenDoors.GetAsAttributes();

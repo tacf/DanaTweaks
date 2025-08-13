@@ -55,14 +55,14 @@ public static class BlockPatches
             return;
         }
 
-        string code = block.Code.GetCompactCode();
-
-        if (!code.Contains("caveart") && !code.Contains("hotspring") && !Core.ConfigServer.DropDecorBlocks.ContainsKey(code))
+        if (Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(block.Code, AssetLocation.Create(x.Key))))
         {
-            any = true;
-            bool enabled = code.Contains("wallpaper") ? true : (block.decorBehaviorFlags & 16) != 0;
-            Core.ConfigServer.DropDecorBlocks.Add(code, enabled);
+            return;
         }
+
+        any = true;
+        bool enabled = block.Code.PathStartsWith("wallpaper") ? true : (block.decorBehaviorFlags & 16) != 0;
+        Core.ConfigServer.DropDecorBlocks.Add(block.Code, enabled);
     }
 
     public static void FillScytheList(this Block block, ref List<string> scytheMorePrefixes)
@@ -100,7 +100,7 @@ public static class BlockPatches
 
     public static void PatchDecor(this Block block)
     {
-        if (Core.ConfigServer.DropDecor && block.HasBehavior<BlockBehaviorDecor>() && Core.ConfigServer.DropDecorBlocks.Any(x => block.WildCardMatchExt(x.Key) && x.Value))
+        if (Core.ConfigServer.DropDecor && block.HasBehavior<BlockBehaviorDecor>() && Core.ConfigServer.DropDecorBlocks.Any(x => WildcardUtil.Match(block.Code, AssetLocation.Create(x.Key)) && x.Value))
         {
             block.CollectibleBehaviors = block.CollectibleBehaviors.Append(new BlockBehaviorGuaranteedDecorDrop(block));
             block.BlockBehaviors = block.BlockBehaviors.Append(new BlockBehaviorGuaranteedDecorDrop(block));
@@ -157,7 +157,7 @@ public static class BlockPatches
 
     public static void PatchOvenFuel(this Block block)
     {
-        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelBlocks.FirstOrDefault(keyVal => block.WildCardMatchExt(keyVal.Key) && keyVal.Value.Enabled).Value;
+        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelBlocks.FirstOrDefault(keyVal => WildcardUtil.Match(block.Code, AssetLocation.Create(keyVal.Key)) && keyVal.Value.Enabled).Value;
         if (ovenFuel == null)
         {
             return;
@@ -175,7 +175,7 @@ public static class BlockPatches
     {
         if (Core.ConfigServer.EverySoilUnstable == false) return;
 
-        if (Core.ConfigServer.EverySoilUnstableBlacklist.Any(code => block.WildCardMatch(AssetLocation.Create(code))))
+        if (Core.ConfigServer.EverySoilUnstableBlacklist.Any(code => WildcardUtil.Match(block.Code, AssetLocation.Create(code))))
         {
             return;
         }

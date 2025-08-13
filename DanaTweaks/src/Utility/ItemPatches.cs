@@ -1,5 +1,4 @@
-﻿using DanaTweaks.Configuration;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Linq;
 using Vintagestory.API.Common;
@@ -66,7 +65,7 @@ public static class ItemPatches
 
     public static void PatchOvenFuel(this Item item)
     {
-        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelItems.FirstOrDefault(keyVal => item.WildCardMatchExt(keyVal.Key) && keyVal.Value.Enabled).Value;
+        OvenFuel ovenFuel = Core.ConfigServer.OvenFuelItems.FirstOrDefault(keyVal => WildcardUtil.Match(item.Code, AssetLocation.Create(keyVal.Key)) && keyVal.Value.Enabled).Value;
         if (ovenFuel == null)
         {
             return;
