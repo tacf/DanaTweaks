@@ -35,13 +35,17 @@ public static class GroundStorage_ImmersiveCrafting
             return true;
         }
 
+        if (firstSlot.Itemstack.Collectible is BlockCrock
+            || secondSlot.Itemstack.Collectible is BlockCrock
+            || Extensions.AnyCrate(firstSlot, secondSlot)
+            || HasFullBackpack(firstSlot, secondSlot))
+        {
+            return true;
+        }
+
         if (!GetMatchingRecipe(firstSlot, secondSlot, out GridRecipe matchingRecipe)
             || !AnySatisfies(firstSlot, secondSlot, matchingRecipe)
-            || HasSameIngredients(firstSlot, secondSlot, matchingRecipe)
-            || HasFullBackpack(firstSlot, secondSlot)
-            || Extensions.AnyCrate(firstSlot, secondSlot)
-            || firstSlot.Itemstack.Collectible is BlockCrock
-            || secondSlot.Itemstack.Collectible is BlockCrock)
+            || HasSameIngredients(firstSlot, secondSlot, matchingRecipe))
         {
             return true;
         }
