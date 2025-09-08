@@ -72,7 +72,6 @@ public class ConfigLibCompatibility
             config.DropVinesAnyway = OnCheckBox(id, config.DropVinesAnyway, nameof(config.DropVinesAnyway));
             config.FirepitHeatsOven = OnCheckBox(id, config.FirepitHeatsOven, nameof(config.FirepitHeatsOven));
             config.FourPlanksFromLog = OnCheckBox(id, config.FourPlanksFromLog, nameof(config.FourPlanksFromLog));
-            config.GroundStorageImmersiveCrafting = OnCheckBox(id, config.GroundStorageImmersiveCrafting, nameof(config.GroundStorageImmersiveCrafting));
             config.HalloweenEveryDay = OnCheckBox(id, config.HalloweenEveryDay, nameof(config.HalloweenEveryDay));
             config.PlanksInPitKiln = OnCheckBox(id, config.PlanksInPitKiln, nameof(config.PlanksInPitKiln));
             config.PlayerDropsHotSlots = OnCheckBox(id, config.PlayerDropsHotSlots, nameof(config.PlayerDropsHotSlots));

@@ -27,7 +27,6 @@ public class HarmonyPatches : ModSystem
         PatchCategoryIfTrue(nameof(Core.ConfigServer.FirepitHeatsOven), value: Core.ConfigServer.FirepitHeatsOven);
         PatchCategoryIfTrue(nameof(Core.ConfigServer.CreativeMiddleClickEntity), value: Core.ConfigServer.CreativeMiddleClickEntity);
         PatchCategoryIfTrue(nameof(Core.ConfigServer.RegrowResin), value: Core.ConfigServer.RegrowResin);
-        PatchCategoryIfTrue(nameof(Core.ConfigServer.GroundStorageImmersiveCrafting), value: Core.ConfigServer.GroundStorageImmersiveCrafting);
         HarmonyInstance.PatchCategory("UnsortedServer");
     }
 

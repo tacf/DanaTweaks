@@ -39,7 +39,6 @@ public class ConfigServer : IModConfig
     public bool ExtraClayforming { get; set; } = true;
     public bool FirepitHeatsOven { get; set; } = true;
     public bool FourPlanksFromLog { get; set; }
-    public bool GroundStorageImmersiveCrafting { get; set; } = true;
     public bool HalloweenEveryDay { get; set; } = true;
     public bool PlanksInPitKiln { get; set; } = true;
     public bool PlayerDropsHotSlots { get; set; }
@@ -104,7 +103,6 @@ public class ConfigServer : IModConfig
         ExtraClayforming = previousConfig.ExtraClayforming;
         FirepitHeatsOven = previousConfig.FirepitHeatsOven;
         FourPlanksFromLog = previousConfig.FourPlanksFromLog;
-        GroundStorageImmersiveCrafting = previousConfig.GroundStorageImmersiveCrafting;
         HalloweenEveryDay = previousConfig.HalloweenEveryDay;
         PlanksInPitKiln = previousConfig.PlanksInPitKiln;
         PlayerDropsHotSlots = previousConfig.PlayerDropsHotSlots;
