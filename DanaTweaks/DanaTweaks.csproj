@@ -28,6 +28,10 @@
 			<Private>false</Private>
 		</Reference>
 		<!-- Vintage Story Included Libraries -->
+		<Reference Include="protobuf-net">
+			<HintPath>$(VINTAGE_STORY)/Lib/protobuf-net.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 		<Reference Include="0Harmony">
 			<HintPath>$(VINTAGE_STORY)\Lib\0Harmony.dll</HintPath>
 			<Private>false</Private>
@@ -44,14 +48,7 @@
 			<HintPath>..\configlib.dll</HintPath>
 			<Private>false</Private>
 		</Reference>
-		<Reference Include="ImGui.NET">
-			<HintPath>..\ImGui.NET.dll</HintPath>
-			<Private>false</Private>
-		</Reference>
-		<Reference Include="VSImGui">
-			<HintPath>..\VSImGui.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
+		<PackageReference Include="VSImGui" Version="0.0.6" PrivateAssets="all"  />
 	</ItemGroup>
 
 	<ItemGroup>

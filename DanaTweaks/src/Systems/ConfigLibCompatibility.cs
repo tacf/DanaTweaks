@@ -91,11 +91,11 @@ public class ConfigLibCompatibility
                 config.AutoPlantDroppedTreeSeedsDelay = OnInputInt(id, config.AutoPlantDroppedTreeSeedsDelay, nameof(config.AutoPlantDroppedTreeSeedsDelay), minValue: 1);
                 ImGui.Unindent();
             }
-            if (ImGui.CollapsingHeader(Lang.Get(settingPrefix + nameof(config.Command)) + $"##settingCommand-{id}"))
+            if (ImGui.CollapsingHeader(Lang.Get(settingPrefix + nameof(config.Hotkeys)) + $"##settingCommand-{id}"))
             {
                 ImGui.Indent();
-                config.Command.CrateOpenCloseLid = OnCheckBox(id, config.Command.CrateOpenCloseLid, nameof(config.Command.CrateOpenCloseLid));
-                config.Command.CrateRemoveOrAddLabel = OnCheckBox(id, config.Command.CrateRemoveOrAddLabel, nameof(config.Command.CrateRemoveOrAddLabel));
+                config.Hotkeys.CrateOpenCloseLid = OnCheckBox(id, config.Hotkeys.CrateOpenCloseLid, nameof(config.Hotkeys.CrateOpenCloseLid));
+                config.Hotkeys.CrateRemoveOrAddLabel = OnCheckBox(id, config.Hotkeys.CrateRemoveOrAddLabel, nameof(config.Hotkeys.CrateRemoveOrAddLabel));
                 ImGui.Unindent();
             }
             if (ImGui.CollapsingHeader(Lang.Get(settingPrefix + nameof(config.RainCollector)) + $"##settingRainCollector-{id}"))

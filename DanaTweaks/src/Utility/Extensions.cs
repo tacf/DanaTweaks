@@ -43,6 +43,11 @@ public static class Extensions
         return pos != null && api.World.BlockAccessor.GetBlockEntityExt<BlockEntityCrate>(pos) != null;
     }
     
+    public static bool IsCrate(this BlockSelection blockSel, ICoreAPI api)
+    {
+        return blockSel != null && api.World.BlockAccessor.GetBlockEntityExt<BlockEntityCrate>(blockSel.Position) != null;
+    }
+    
     public static bool AnyCrate(params ItemSlot[] slots)
     {
         for (int i = 0; i < slots.Length; i++)

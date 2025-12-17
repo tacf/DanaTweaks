@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Öffnen oder Schließen des Kistendeckels",
-    "Command.RemoveOrAddLabel.Name": "Pergament auf Kiste entfernen oder hinzufügen",
-    "Command.Error.NoCrate": "Keine Kiste in Sicht",
-    "Command.Error.HasDiffLabel": "Kiste hat anderes Pergament",
-    "Command.Error.NoLabel": "Kein Pergament in der Hand oder auf der Kiste",
+    "Hotkey.OpenCloseLid.Name": "Öffnen oder Schließen des Kistendeckels",
+    "Hotkey.RemoveOrAddLabel.Name": "Pergament auf Kiste entfernen oder hinzufügen",
+    "Hotkey.Error.NoCrate": "Keine Kiste in Sicht",
+    "Hotkey.Error.HasDiffLabel": "Kiste hat anderes Pergament",
+    "Hotkey.Error.NoLabel": "Kein Pergament in der Hand oder auf der Kiste",
     "RemoveBookSignature": "Buchsignatur entfernen (Sie müssen der Autor dieses Buches sein)"
 }

@@ -1,11 +1,11 @@
 {
     "warning-temporary":"Tymczasowo wylaczone ze wzgledu na znaczace zmiany w API gry ktore umozliwiaja dzialanie tej funkcjonalnosci.",
 
-    "Command.OpenCloseLid.Name": "Otworz lub zamknij pokrywe skrzyni",
-    "Command.RemoveOrAddLabel.Name": "Usuń lub dodaj pergamin na skrzyni",
-    "Command.Error.NoCrate": "Brak skrzyni w zasiegu wzroku",
-    "Command.Error.HasDiffLabel": "Skrzynia ma inny pergamin",
-    "Command.Error.NoLabel": "Brak pergaminu w reku lub na skrzyni",
+    "Hotkey.OpenCloseLid.Name": "Otworz lub zamknij pokrywe skrzyni",
+    "Hotkey.RemoveOrAddLabel.Name": "Usuń lub dodaj pergamin na skrzyni",
+    "Hotkey.Error.NoCrate": "Brak skrzyni w zasiegu wzroku",
+    "Hotkey.Error.HasDiffLabel": "Skrzynia ma inny pergamin",
+    "Hotkey.Error.NoLabel": "Brak pergaminu w reku lub na skrzyni",
     "RemoveBookSignature": "Usuń podpis ksiazki (musisz być autorem tej ksiazki)",
     "waxcheese": "Zawoskuj ser",
 
@@ -52,7 +52,7 @@
 
     "Config.Setting.Model": "Model",
 
-    "Config.Setting.Command": "Polecenia",
+    "Config.Setting.Hotkeys": "Hotkeys",
     "Config.Setting.CrateOpenCloseLid": "Zezwol na otwieranie/zamykanie pokrywy skrzyni za pomoca polecenia",
     "Config.Setting.CrateRemoveOrAddLabel": "Zezwol na dodawanie/usuwanie etykiet skrzyni za pomoca polecenia",
 

@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Öppna eller stäng lådans lock",
-    "Command.RemoveOrAddLabel.Name": "Ta bort eller lägg till pergament på lådan",
-    "Command.Error.NoCrate": "Ingen låda i sikte",
-    "Command.Error.HasDiffLabel": "Lådan har olika pergament",
-    "Command.Error.NoLabel": "Inget pergament i handen eller på lådan",
+    "Hotkey.OpenCloseLid.Name": "Öppna eller stäng lådans lock",
+    "Hotkey.RemoveOrAddLabel.Name": "Ta bort eller lägg till pergament på lådan",
+    "Hotkey.Error.NoCrate": "Ingen låda i sikte",
+    "Hotkey.Error.HasDiffLabel": "Lådan har olika pergament",
+    "Hotkey.Error.NoLabel": "Inget pergament i handen eller på lådan",
     "RemoveBookSignature": "Ta bort boksignaturen (du måste vara författaren till den här boken)"
 }

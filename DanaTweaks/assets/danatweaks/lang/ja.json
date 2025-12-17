@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "木箱の蓋を開けるか閉める",
-    "Command.RemoveOrAddLabel.Name": "木箱のパーチメントを取り除くか追加する",
-    "Command.Error.NoCrate": "クレートは見当たらない",
-    "Command.Error.HasDiffLabel": "木箱の羊皮紙が違う",
-    "Command.Error.NoLabel": "羊皮紙は手にも木箱にもない",
+    "Hotkey.OpenCloseLid.Name": "木箱の蓋を開けるか閉める",
+    "Hotkey.RemoveOrAddLabel.Name": "木箱のパーチメントを取り除くか追加する",
+    "Hotkey.Error.NoCrate": "クレートは見当たらない",
+    "Hotkey.Error.HasDiffLabel": "木箱の羊皮紙が違う",
+    "Hotkey.Error.NoLabel": "羊皮紙は手にも木箱にもない",
     "RemoveBookSignature": "本の署名を削除する（あなたはこの本の著者でなければなりません）"
 }

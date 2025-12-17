@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Malfermu aŭ fermu la kovrilon de la kesto",
-    "Command.RemoveOrAddLabel.Name": "Forigi aŭ aldoni pergamenon sur keston",
-    "Command.Error.NoCrate": "Neniu kesto en vido",
-    "Command.Error.HasDiffLabel": "Kesto havas malsaman pergamenon",
-    "Command.Error.NoLabel": "Neniu pergameno en la mano aŭ sur kesto",
+    "Hotkey.OpenCloseLid.Name": "Malfermu aŭ fermu la kovrilon de la kesto",
+    "Hotkey.RemoveOrAddLabel.Name": "Forigi aŭ aldoni pergamenon sur keston",
+    "Hotkey.Error.NoCrate": "Neniu kesto en vido",
+    "Hotkey.Error.HasDiffLabel": "Kesto havas malsaman pergamenon",
+    "Hotkey.Error.NoLabel": "Neniu pergameno en la mano aŭ sur kesto",
     "RemoveBookSignature": "Forigi librosignaturon (vi devas esti la aŭtoro de ĉi tiu libro)"
 }

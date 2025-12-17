@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Otvoriť alebo zatvoriť veko prepravky",
-    "Command.RemoveOrAddLabel.Name": "Odstrániť alebo pridať pergamen na debnu",
-    "Command.Error.NoCrate": "Žiadna debna v dohľade",
-    "Command.Error.HasDiffLabel": "Debna má iný pergamen",
-    "Command.Error.NoLabel": "Žiadny pergamen v ruke ani na debne",
+    "Hotkey.OpenCloseLid.Name": "Otvoriť alebo zatvoriť veko prepravky",
+    "Hotkey.RemoveOrAddLabel.Name": "Odstrániť alebo pridať pergamen na debnu",
+    "Hotkey.Error.NoCrate": "Žiadna debna v dohľade",
+    "Hotkey.Error.HasDiffLabel": "Debna má iný pergamen",
+    "Hotkey.Error.NoLabel": "Žiadny pergamen v ruke ani na debne",
     "RemoveBookSignature": "Odstrániť podpis knihy (musíte byť autorom tejto knihy)"
 }

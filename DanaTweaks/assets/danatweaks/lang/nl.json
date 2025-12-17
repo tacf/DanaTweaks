@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Open of sluit het deksel van de kist",
-    "Command.RemoveOrAddLabel.Name": "Verwijder of voeg perkament toe aan krat",
-    "Command.Error.NoCrate": "Geen krat in zicht",
-    "Command.Error.HasDiffLabel": "Krat heeft ander perkament",
-    "Command.Error.NoLabel": "Geen perkament in hand of op krat",
+    "Hotkey.OpenCloseLid.Name": "Open of sluit het deksel van de kist",
+    "Hotkey.RemoveOrAddLabel.Name": "Verwijder of voeg perkament toe aan krat",
+    "Hotkey.Error.NoCrate": "Geen krat in zicht",
+    "Hotkey.Error.HasDiffLabel": "Krat heeft ander perkament",
+    "Hotkey.Error.NoLabel": "Geen perkament in hand of op krat",
     "RemoveBookSignature": "Verwijder boekhandtekening (u moet de auteur van dit boek zijn)"
 }

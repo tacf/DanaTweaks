@@ -13,7 +13,7 @@ public class ConfigServer : IModConfig
 
     public bool AutoPlantDroppedTreeSeeds { get; set; } = true;
     public int AutoPlantDroppedTreeSeedsDelay { get; set; } = 5000;
-    public Command Command { get; set; } = new();
+    public TweakHotkeys Hotkeys { get; set; } = new();
     public Dictionary<string, CreatureOpenDoors> CreaturesOpenDoors { get; set; } = new();
     public Dictionary<string, OvenFuel> OvenFuelItems { get; set; } = new();
     public Dictionary<string, OvenFuel> OvenFuelBlocks { get; set; } = new();
@@ -77,7 +77,7 @@ public class ConfigServer : IModConfig
         AutoPlantDroppedTreeSeeds = previousConfig.AutoPlantDroppedTreeSeeds;
         AutoPlantDroppedTreeSeedsDelay = previousConfig.AutoPlantDroppedTreeSeedsDelay;
 
-        Command = previousConfig.Command;
+        Hotkeys = previousConfig.Hotkeys;
         RainCollector = previousConfig.RainCollector;
 
         CreaturesOpenDoors.AddRange(previousConfig.CreaturesOpenDoors);

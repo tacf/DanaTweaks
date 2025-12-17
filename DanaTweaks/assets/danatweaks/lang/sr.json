@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Отворите или затворите поклопац сандука",
-    "Command.RemoveOrAddLabel.Name": "Уклоните или додајте пергамент на сандук",
-    "Command.Error.NoCrate": "Нема сандука на видику",
-    "Command.Error.HasDiffLabel": "Сандук има другачији пергамент",
-    "Command.Error.NoLabel": "Без пергамента у руци или на сандуку",
+    "Hotkey.OpenCloseLid.Name": "Отворите или затворите поклопац сандука",
+    "Hotkey.RemoveOrAddLabel.Name": "Уклоните или додајте пергамент на сандук",
+    "Hotkey.Error.NoCrate": "Нема сандука на видику",
+    "Hotkey.Error.HasDiffLabel": "Сандук има другачији пергамент",
+    "Hotkey.Error.NoLabel": "Без пергамента у руци или на сандуку",
     "RemoveBookSignature": "Уклони потпис књиге (морате бити аутор ове књиге)"
 }

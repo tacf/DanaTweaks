@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Aprire o chiudere il coperchio della cassa",
-    "Command.RemoveOrAddLabel.Name": "Rimuovere o aggiungere la pergamena sulla cassa",
-    "Command.Error.NoCrate": "Nessuna cassa in vista",
-    "Command.Error.HasDiffLabel": "La cassa ha una pergamena diversa",
-    "Command.Error.NoLabel": "Nessuna pergamena in mano o sulla cassa",
+    "Hotkey.OpenCloseLid.Name": "Aprire o chiudere il coperchio della cassa",
+    "Hotkey.RemoveOrAddLabel.Name": "Rimuovere o aggiungere la pergamena sulla cassa",
+    "Hotkey.Error.NoCrate": "Nessuna cassa in vista",
+    "Hotkey.Error.HasDiffLabel": "La cassa ha una pergamena diversa",
+    "Hotkey.Error.NoLabel": "Nessuna pergamena in mano o sulla cassa",
     "RemoveBookSignature": "Rimuovi la firma del libro (devi essere l'autore di questo libro)"
 }

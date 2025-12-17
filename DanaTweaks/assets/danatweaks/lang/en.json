@@ -1,11 +1,11 @@
 {
     "warning-temporary":"Temporarily disabled due to significant changes in game API that made this specific feature work",
 
-    "Command.OpenCloseLid.Name": "(Dana Tweaks) Open or close the crate lid",
-    "Command.RemoveOrAddLabel.Name": "(Dana Tweaks) Remove or add parchment on crate",
-    "Command.Error.NoCrate": "No crate in sight",
-    "Command.Error.HasDiffLabel": "Crate has different parchment",
-    "Command.Error.NoLabel": "No parchment in hand or on crate",
+    "Hotkey.OpenCloseLid.Name": "(Dana Tweaks) Open or close the crate lid",
+    "Hotkey.RemoveOrAddLabel.Name": "(Dana Tweaks) Remove or add parchment on crate",
+    "Hotkey.Error.NoCrate": "No crate in sight",
+    "Hotkey.Error.HasDiffLabel": "Crate has different parchment",
+    "Hotkey.Error.NoLabel": "No parchment in hand or on crate",
     "RemoveBookSignature": "Remove book signature (you must be the author of this book)",
     "waxcheese": "Wax the cheese",
 
@@ -54,9 +54,9 @@
 
     "Config.Setting.Model": "Model",
 
-    "Config.Setting.Command": "Commands",
-    "Config.Setting.CrateOpenCloseLid": "Allow to open/close crate lid with command",
-    "Config.Setting.CrateRemoveOrAddLabel": "Allow to remove/add crate label with command",
+    "Config.Setting.Hotkeys": "Hotkeys",
+    "Config.Setting.CrateOpenCloseLid": "Allow to open/close crate lid with hotkey",
+    "Config.Setting.CrateRemoveOrAddLabel": "Allow to remove/add crate label with hotkey",
 
     "Config.Setting.RainCollector": "Rain Collector",
     "Config.Setting.LitresPerUpdate": "Litres Per Update",

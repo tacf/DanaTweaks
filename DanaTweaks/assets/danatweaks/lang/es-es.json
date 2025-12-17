@@ -1,11 +1,11 @@
 {
     "warning-temporary":"Desactivado temporalmente debido a cambios significativos en la API del juego que hacían que esta función específica funcionase.",
 
-    "Command.OpenCloseLid.Name": "Abrir/Cerrar Tapa",
-    "Command.RemoveOrAddLabel.Name": "Quitar/Añadir Pergamino",
-    "Command.Error.NoCrate": "No hay Cajas a la vista.",
-    "Command.Error.HasDiffLabel": "La Caja tiene una Etiqueta especial que no se puede retirar.",
-    "Command.Error.NoLabel": "No hay ningún Pergamino en tu mano ni en la Caja.",
+    "Hotkey.OpenCloseLid.Name": "Abrir/Cerrar Tapa",
+    "Hotkey.RemoveOrAddLabel.Name": "Quitar/Añadir Pergamino",
+    "Hotkey.Error.NoCrate": "No hay Cajas a la vista.",
+    "Hotkey.Error.HasDiffLabel": "La Caja tiene una Etiqueta especial que no se puede retirar.",
+    "Hotkey.Error.NoLabel": "No hay ningún Pergamino en tu mano ni en la Caja.",
     "RemoveBookSignature": "Eliminar la Firma del Libro (si eres el Autor).",
     "waxcheese": "Engrasar el Queso",
 
@@ -54,7 +54,7 @@
 
     "Config.Setting.Model": "Modelo",
 
-    "Config.Setting.Command": "Comandos",
+    "Config.Setting.Hotkeys": "Hotkeys",
     "Config.Setting.CrateOpenCloseLid": "Permitir Abrir/Cerrar la Tapa de la Caja con un comando.",
     "Config.Setting.CrateRemoveOrAddLabel": "Permitir Quitar/Añadir la Etiqueta de Caja con comando.",
 

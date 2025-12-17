@@ -1,8 +1,8 @@
 {
-    "Command.OpenCloseLid.Name": "Abrir ou fechar a tampa do caixote",
-    "Command.RemoveOrAddLabel.Name": "Remover ou adicionar pergaminho no caixote",
-    "Command.Error.NoCrate": "Não há caixote à vista",
-    "Command.Error.HasDiffLabel": "O caixote tem pergaminho diferente",
-    "Command.Error.NoLabel": "Nenhum pergaminho na mão ou no caixote",
+    "Hotkey.OpenCloseLid.Name": "Abrir ou fechar a tampa do caixote",
+    "Hotkey.RemoveOrAddLabel.Name": "Remover ou adicionar pergaminho no caixote",
+    "Hotkey.Error.NoCrate": "Não há caixote à vista",
+    "Hotkey.Error.HasDiffLabel": "O caixote tem pergaminho diferente",
+    "Hotkey.Error.NoLabel": "Nenhum pergaminho na mão ou no caixote",
     "RemoveBookSignature": "Remover assinatura do livro (tem de ser o autor deste livro)"
 }
