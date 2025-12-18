@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
@@ -6,36 +6,83 @@ using Vintagestory.GameContent;
 
 namespace DanaTweaks;
 
-public class BlockBehaviorOpenConnectedTrapdoors : BlockBehavior
+public class BlockBehaviorOpenConnectedTrapdoors(Block block) : BlockBehavior(block)
 {
     public override bool ClientSideOptional => true;
 
-    public BlockBehaviorOpenConnectedTrapdoors(Block block) : base(block) { }
-
     public override bool OnBlockInteractStart(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel, ref EnumHandling handling)
     {
-        BlockPos originalPos = blockSel.Position;
-        BEBehaviorTrapDoor originalTrapdoor = GetTrapdoorAtPos(world, originalPos);
-        if (byPlayer == null || originalTrapdoor == null)
-        {
-            return false;
-        }
+        if (byPlayer == null || blockSel == null) return false;
 
-        BlockPos oppositePos = originalPos.AddCopy(originalTrapdoor.facingWhenOpened.Opposite);
-        BEBehaviorTrapDoor oppositeTrapDoor = GetTrapdoorAtPos(world, oppositePos);
+        BlockPos startPos = blockSel.Position;
+        BEBehaviorTrapDoor startDoor = GetTrapdoorAtPos(world, startPos);
+        if (startDoor == null) return false;
 
-        bool openOpposite = oppositeTrapDoor != null && originalTrapdoor.facingWhenClosed == oppositeTrapDoor.facingWhenClosed;
-        if (openOpposite)
-        {
-            Open(world, byPlayer, oppositePos, blockSel.Face, oppositeTrapDoor);
-        }
+        bool targetOpenState = !startDoor.Opened;
+        List<BlockPos> positions = FloodFillTrapdoors(startDoor);
 
-        bool openConnected = !byPlayer.Entity.ServerControls.Sneak;
-        if (openConnected)
+        foreach (BlockPos pos in positions)
         {
-            OpenConnected(originalTrapdoor, oppositeTrapDoor, world, byPlayer, blockSel.Face);
+            BEBehaviorTrapDoor neighbor = GetTrapdoorAtPos(world, pos);
+            if (neighbor == null) continue;
+
+            if (neighbor.Opened == targetOpenState)
+            {
+                Toggle(world, byPlayer, pos, blockSel.Face, neighbor, open: !targetOpenState);
+            }
         }
         return true;
+    }
+
+    private static List<BlockPos> FloodFillTrapdoors(BEBehaviorTrapDoor startDoor)
+    {
+        BlockPos startPos = startDoor.Pos.Copy();
+        BlockFacing attachedFace = BlockFacing.ALLFACES[startDoor.AttachedFace];
+
+        List<BlockPos> foundPositions = [];
+        List<BlockPos> todo = [];
+        HashSet<BlockPos> visited = [];
+
+        foreach (BlockFacing face in BlockFacing.ALLFACES)
+        {
+            todo.Add(startPos.AddCopy(face));
+        }
+
+        visited.Add(startPos.Copy());
+
+        while (todo.Count > 0)
+        {
+            BlockPos cur = todo[todo.Count - 1];
+            todo.RemoveAt(todo.Count - 1);
+
+            if (visited.Contains(cur)) continue;
+            visited.Add(cur.Copy());
+
+            if (cur.ManhattenDistance(startPos) > Core.ConfigServer.OpenConnectedTrapdoorsMaxBlocksDistance) continue;
+
+            BEBehaviorTrapDoor curDoor = GetTrapdoorAtPos(startDoor.Api.World, cur);
+            if (curDoor == null) continue;
+
+            if (startDoor.facingWhenClosed != curDoor.facingWhenClosed) continue;
+
+            BlockFacing curAttachedFace = BlockFacing.ALLFACES[curDoor.AttachedFace];
+            bool isAttachedToVerticalFace = attachedFace.IsVertical && attachedFace == curAttachedFace;
+            bool isAttachedToHorizontalFace = attachedFace.IsHorizontal && (attachedFace == curAttachedFace.Opposite || attachedFace == curAttachedFace);
+
+            if (!isAttachedToVerticalFace && !isAttachedToHorizontalFace) continue;
+
+            foundPositions.Add(cur.Copy());
+
+            foreach (BlockFacing face in BlockFacing.ALLFACES)
+            {
+                BlockPos next = cur.AddCopy(face);
+                if (!visited.Contains(next))
+                {
+                    todo.Add(next);
+                }
+            }
+        }
+        return foundPositions;
     }
 
     private static BEBehaviorTrapDoor GetTrapdoorAtPos(IWorldAccessor world, BlockPos pos)
@@ -43,69 +90,12 @@ public class BlockBehaviorOpenConnectedTrapdoors : BlockBehavior
         return world.BlockAccessor.GetBlockEntity(pos)?.GetBehavior<BEBehaviorTrapDoor>();
     }
 
-    private static void Open(IWorldAccessor world, IPlayer byPlayer, BlockPos pos, BlockFacing facing, BEBehaviorTrapDoor trapdoor)
+    private static void Toggle(IWorldAccessor world, IPlayer byPlayer, BlockPos pos, BlockFacing facing, BEBehaviorTrapDoor trapdoor, bool open)
     {
         Caller caller = new Caller() { Player = byPlayer };
         BlockSelection _blockSel = new BlockSelection(pos, facing, trapdoor.Block);
         TreeAttribute tree = new TreeAttribute();
-        tree.SetBool("opened", true);
+        tree.SetBool("opened", open);
         trapdoor.Block.Activate(world, caller, _blockSel, tree);
-    }
-
-    private static void OpenConnected(BEBehaviorTrapDoor originalTrapdoor, BEBehaviorTrapDoor oppositeTrapdoor, IWorldAccessor world, IPlayer player, BlockFacing facing)
-    {
-        EnumAxis axis = originalTrapdoor.facingWhenOpened.Axis switch
-        {
-            EnumAxis.X when originalTrapdoor.facingWhenClosed.Axis == EnumAxis.Y => EnumAxis.Z,
-            EnumAxis.Z when originalTrapdoor.facingWhenClosed.Axis == EnumAxis.Y => EnumAxis.X,
-            _ => EnumAxis.Y,
-        };
-
-        OpenConnectedRow(originalTrapdoor, world, player, facing, axis);
-        OpenConnectedRow(originalTrapdoor, world, player, facing, axis, negative: true);
-
-        OpenConnectedRow(oppositeTrapdoor, world, player, facing, axis);
-        OpenConnectedRow(oppositeTrapdoor, world, player, facing, axis, negative: true);
-    }
-
-    private static void OpenConnectedRow(BEBehaviorTrapDoor originalTrapdoor, IWorldAccessor world, IPlayer player, BlockFacing facing, EnumAxis axis = EnumAxis.Y, bool negative = false)
-    {
-        if (originalTrapdoor == null) return;
-
-        int currentAdditive = negative ? -1 : 1;
-        bool moveNext = true;
-        while (SatisfiesDistance(GetCoordinateByAxis(originalTrapdoor.Pos, axis), GetCoordinateByAxis(AddPosCopy(originalTrapdoor, currentAdditive, axis), axis)) && moveNext)
-        {
-            BlockPos _pos = AddPosCopy(originalTrapdoor, currentAdditive, axis);
-            BEBehaviorTrapDoor _trapdoor = GetTrapdoorAtPos(world, _pos);
-            if (_trapdoor != null && originalTrapdoor.facingWhenClosed == _trapdoor.facingWhenClosed)
-            {
-                Open(world, player, _pos, facing, _trapdoor);
-                _ = negative ? currentAdditive-- : currentAdditive++;
-                continue;
-            }
-            moveNext = false;
-        }
-    }
-
-    private static BlockPos AddPosCopy(BEBehaviorTrapDoor originalTrapdoor, int currentAdditive, EnumAxis axis) => axis switch
-    {
-        EnumAxis.X => originalTrapdoor.Pos.AddCopy(currentAdditive, 0, 0),
-        EnumAxis.Y => originalTrapdoor.Pos.AddCopy(0, currentAdditive, 0),
-        EnumAxis.Z => originalTrapdoor.Pos.AddCopy(0, 0, currentAdditive),
-        _ => originalTrapdoor.Pos.AddCopy(0, currentAdditive, 0),
-    };
-
-    private static int GetCoordinateByAxis(BlockPos pos, EnumAxis axis) => axis switch
-    {
-        EnumAxis.X => pos.X,
-        EnumAxis.Y => pos.Y,
-        EnumAxis.Z => pos.Z,
-        _ => pos.Y,
-    };
-
-    private static bool SatisfiesDistance(int originalCoordinate, int currentCoordinate)
-    {
-        return Math.Abs(originalCoordinate - currentCoordinate) <= Core.ConfigServer.OpenConnectedTrapdoorsMaxBlocksDistance;
     }
 }
