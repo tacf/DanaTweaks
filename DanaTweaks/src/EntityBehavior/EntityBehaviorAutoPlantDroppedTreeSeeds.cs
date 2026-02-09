@@ -2,7 +2,6 @@
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
 using Vintagestory.GameContent;
-using static DanaTweaks.Constants;
 
 namespace DanaTweaks;
 
@@ -33,7 +32,7 @@ public class EntityBehaviorAutoPlantDroppedTreeSeeds : EntityBehavior
 
         string treetype = item.Variant["type"];
         Block saplBlock = entityItem.World.GetBlock(AssetLocation.Create("sapling-" + treetype + "-free", item.Code.Domain));
-        if (saplBlock is not BlockSapling blockSapling)
+        if (saplBlock == null)
         {
             return;
         }
